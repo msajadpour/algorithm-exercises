@@ -13,6 +13,14 @@ Time - O(n log n)
 Space - O(1)
 **/
 
-function areThereDuplicates() {
-  // good luck. (supply any arguments you deem necessary.)
+function areThereDuplicates(...arguments) {
+  const obj = {};
+  for (let i = 0; i < arguments.length; i++) {
+    if (obj[arguments[i]] !== undefined) {
+      return true;
+    }
+    obj[arguments[i]] = arguments[i]
+  }
+  return false;
 }
+console.log(areThereDuplicates('a', 'b', 'c'))
